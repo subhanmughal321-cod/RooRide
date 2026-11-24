@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
     color: #182321;
     background-color: #fff;
 }
@@ -484,8 +486,7 @@ button, input, select {
 .popular-trips-section {
     background-color: #fafbfa;
     padding: 60px 4%;
-    font-family: Arial, sans-serif;
-}
+font-family: 'Plus Jakarta Sans', Arial, sans-serif;}
 
 .popular-trips-section .trips-container {
     width: 100%;
@@ -847,7 +848,7 @@ button, input, select {
 /* Added Share Your Trip and Benefits Section */
 
 .benefits-section {
-  font-family: Arial, sans-serif;
+font-family: 'Plus Jakarta Sans', Arial, sans-serif;
   background-color: #ffffff;
   padding: 40px 20px;
 }
