@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RooRide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-logo"><a href="front.html"><img src="logo.png" alt="RooRide Logo"></a></div>
+        <div class="nav-links">
+            <a href="find-ride.html">Find a ride</a>
+            <a href="offer-ride.html">Offer a ride</a>
+            <a href="help.html">Help</a>
+        </div>
+        <div class="nav-right">
+            <div class="login"><a href="login.html">Log in</a></div>
+            <div class="signup"><a href="signup.html">Sign up</a></div>
+        </div>
+    </div>
+
+    <div class="mainimg">
+        <img src="background.png" alt="People sharing a ride in Pakistan">
+        <div class="paperedge"></div>
+        <div class="imagetext">
+            <h1>Share a ride<br>across town.</h1>
+            <div class="yellowline"></div>
+            <p>Heading to class, work, or the market? Find someone going your way In.</p>
+        </div>
+        <div class="ridebox">
+            <div class="ridetabs">
+                <button class="tab active" type="button" aria-pressed="true" onclick="switchTab('find')">
+                    Find a ride
+                </button>
+
+                <button class="tab" type="button" aria-pressed="false" onclick="switchTab('offer')">
+                    Offer a ride
+                </button>
+            </div>
+
+            <form class="rideform" id="rideform" action="find-ride.html" method="get">
+
+                <div class="ridefield">
+                    <label for="from">Leaving from</label>
+                    <div class="fieldcontrol"><svg class="fieldicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><select id="from" name="from" required>
+                        <option value="">Select departure location</option>
+                        <option value="GIFT University">GIFT University</option>
+                        <option value="Satellite Town" selected>Satellite Town</option>
+                        <option value="Peoples Colony">Peoples Colony</option>
+                        <option value="Model Town">Model Town</option>
+                        <option value="DC Colony">DC Colony</option>
+                        <option value="Wapda Town">Wapda Town</option>
+                        <option value="Citi Housing">Citi Housing</option>
+                        <option value="Garden Town">Garden Town</option>
+                        <option value="Civil Lines">Civil Lines</option>
+                        <option value="Gulshan Iqbal">Gulshan Iqbal</option>
+                        <option value="Rahwali">Rahwali</option>
+                        <option value="Kangniwala">Kangniwala</option>
+                        <option value="Chand Da Qila">Chand Da Qila</option>
+                        <option value="Sialkot Bypass">Sialkot Bypass</option>
+                        <option value="Khiali">Khiali</option>
+                        <option value="Nowshera Virkan">Nowshera Virkan</option>
+                        <option value="Kamoke">Kamoke</option>
+                        <option value="Eminabad">Eminabad</option>
+                    </select></div>
+                </div>
+
+                <div class="ridefield">
+                    <label for="to">Going to</label>
+                    <div class="fieldcontrol"><svg class="fieldicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><select id="to" name="to" required>
+                        <option value="">Select arrival location</option>
+                        <option value="GIFT University">GIFT University</option>
+                        <option value="Satellite Town">Satellite Town</option>
+                        <option value="Peoples Colony">Peoples Colony</option>
+                        <option value="Model Town" selected>Model Town</option>
+                        <option value="DC Colony">DC Colony</option>
+                        <option value="Wapda Town">Wapda Town</option>
+                        <option value="Citi Housing">Citi Housing</option>
+                        <option value="Garden Town">Garden Town</option>
+                        <option value="Civil Lines">Civil Lines</option>
+                        <option value="Gulshan Iqbal">Gulshan Iqbal</option>
+                        <option value="Rahwali">Rahwali</option>
+                        <option value="Kangniwala">Kangniwala</option>
+                        <option value="Chand Da Qila">Chand Da Qila</option>
+                        <option value="Sialkot Bypass">Sialkot Bypass</option>
+                        <option value="Khiali">Khiali</option>
+                        <option value="Nowshera Virkan">Nowshera Virkan</option>
+                        <option value="Kamoke">Kamoke</option>
+                        <option value="Eminabad">Eminabad</option>
+                    </select></div>
+                </div>
+
+                <div class="ridefield">
+                    <label for="date">Date</label>
+                    <div class="fieldcontrol"><svg class="fieldicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg><input type="date" id="date" name="date" required><span class="datehint">Select date</span></div>
+                </div>
+
+                <div class="ridefield">
+                    <label for="passengers">Seats</label>
+                    <div class="fieldcontrol"><svg class="fieldicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="M6 17v-4a6 6 0 0 1 12 0v4M3 15v5h18v-5M8 20v2M16 20v2"/></svg><select id="passengers" name="passengers" required>
+                        <option value="1">1 seat</option>
+                        <option value="2">2 seats</option>
+                        <option value="3">3 seats</option>
+                        <option value="4">4 seats</option>
+                    </select></div>
+                </div>
+
+                <div class="ridebutton">
+                    <button type="submit" id="rideSubmit">Search rides</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!-- Updated popular daily trips section - design from 2page.jpg -->
+    <section class="popular-trips-section" id="popular-trips">
+        <div class="trips-container">
+            <h2>Popular daily trips around the city and suburbs</h2>
+            <div class="trips-carousel">
+                <div class="trips" id="trips-list">
+            <article class="card trip-card">
+                <img src="images.jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
+                <div class="trip-card-content">
+                    <div class="trip-route">
+                        <span>Model Town</span>
+                        <span>People’s Colony</span>
+                    </div>
+                    <span class="trip-tag">Local route</span>
+                    <div class="trip-footer">
+                        <div class="trip-price">
+                            <span>From</span>
+                            <strong>Rs 500</strong>
+                        </div>
+                        <a class="trip-action" href="find-ride.html?from=Model%20Town&amp;to=Peoples%20Colony" aria-label="Find ride from Model Town to People’s Colony">→</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card trip-card">
+                <img src="images (1).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
+                <div class="trip-card-content">
+                    <div class="trip-route">
+                        <span>Gujranwala</span>
+                        <span>City Tour</span>
+                    </div>
+                    <span class="trip-tag">City tour</span>
+                    <div class="trip-footer">
+                        <div class="trip-price">
+                            <span>From</span>
+                            <strong>Rs 5000</strong>
+                        </div>
+                        <a class="trip-action" href="find-ride.html?from=Gujranwala&amp;to=City%20Tour" aria-label="Find ride from Gujranwala to City Tour">→</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card trip-card">
+                <img src="images (2).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
+                <div class="trip-card-content">
+                    <div class="trip-route">
+                        <span>Satellite Town</span>
+                        <span>Master City</span>
+                    </div>
+                    <span class="trip-tag">Local route</span>
+                    <div class="trip-footer">
+                        <div class="trip-price">
+                            <span>From</span>
+                            <strong>Rs 999</strong>
+                        </div>
+                        <a class="trip-action" href="find-ride.html?from=Satellite%20Town&amp;to=Master%20City" aria-label="Find ride from Satellite Town to Master City">→</a>
+                    </div>
+                </div>
+            </article>
+            <article class="card trip-card">
+                <img src="images (3).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
+                <div class="trip-card-content">
+                    <div class="trip-route">
+                        <span>Model Town</span>
+                        <span>Satellite Town</span>
+                    </div>
+                    <span class="trip-tag">Local route</span>
+                    <div class="trip-footer">
+                        <div class="trip-price">
+                            <span>From</span>
+                            <strong>Rs 500</strong>
+                        </div>
+                        <a class="trip-action" href="find-ride.html?from=Model%20Town&amp;to=Satellite%20Town" aria-label="Find ride from Model Town to Satellite Town">→</a>
+                    </div>
+                </div>
+            </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="services">
+        <h1>Who is this service for?</h1>
+        <div class="serviceboxes">
+            <div class="servicebox">
+                <div class="serviceheading"><span class="serviceicon">👤</span><h3>For passengers looking for a driver</h3></div>
+                <p>Passengers can find a ride for their route, choose a convenient time, and arrange a shared trip with the driver.</p>
+                <div class="servicelist"><p>✓ Find a driver for daily trips</p><p>✓ Travel cheaper by sharing costs</p><p>✓ Choose convenient pickup locations</p><p>✓ Search for rides without unnecessary calls</p></div>
+            </div>
+            <div class="servicebox">
+                <div class="serviceheading"><span class="serviceicon">🚘</span><h3>For drivers looking for passengers</h3></div>
+                <p>Drivers can create trips, specify their route, time, and available seats to find passengers going the same way.</p>
+                <div class="servicelist"><p>✓ Fill free seats in your car</p><p>✓ Partially cover fuel costs</p><p>✓ Find passengers for planned trips</p><p>✓ Communicate directly with passengers</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footermain">
+            <div class="footerlogo"><img src="/logo.png" alt="RooRide Logo"><p>A service for convenient and safe shared rides.</p><a href="find-ride.html" class="footerbutton">Find a ride →</a></div>
+            <div class="footerlinks"><h4>Trips</h4><a href="find-ride.html">Find a ride</a><a href="offer-ride.html">Offer a ride</a><a href="my-trips.html">My trips</a></div>
+            <div class="footerlinks"><h4>My RooRide</h4><a href="profile.html">Profile</a><a href="reviews.html">Reviews and ratings</a><a href="settings.html">Settings</a></div>
+            <div class="footerlinks"><h4>Help</h4><a href="help.html">Help Center</a><a href="safety.html">Safety</a><a href="rules.html">Service rules</a></div>
+        </div>
+        <div class="footerbottom"><p>© 2026 RooRide. Made By JKS.</p><div class="footerpolicy"><a href="terms.html">Terms of use</a><span>|</span><a href="privacy.html">Privacy policy</a></div></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
