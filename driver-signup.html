@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Create your driver account | RooRide</title>
+  <link rel="stylesheet" href="driver-signup.css?v=5">
+</head>
+
+<body>
+  <header class="signup-header"><a href="index.html"><img src="logo(2).png" alt="RooRide"></a><a class="home-link" href="index.html">← Back to home</a></header>
+  <main class="signup-page">
+    <p class="progress">━━ Sign up · Step 2 of 2</p>
+
+    <a class="change-link" href="account-type.html">Change account type</a>
+    <h1>Create your driver account</h1>
+    <p class="note">All fields are required unless marked optional.</p>
+
+    <div class="preview">
+      <strong>Signup preview.</strong> Use sample information only. No data or documents are uploaded or saved.
+    </div>
+
+    <form id="signup-form" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="role" value="driver">
+      <section class="form-section">
+  <h2>Personal details</h2>
+
+  <div class="field full-width">
+    <label for="full-name">Full legal name</label>
+    <input
+      id="full-name"
+      name="fullName"
+      type="text"
+      placeholder="As shown on your CNIC"
+      required
+    >
+  </div>
+
+  <div class="field">
+    <label for="birth-date">Date of birth</label>
+    <input id="birth-date" name="birthDate" type="date" required>
+  </div>
+
+  <div class="field">
+    <label for="cnic">CNIC number</label>
+    <input
+      id="cnic"
+      name="cnic"
+      type="text"
+      placeholder="00000-0000000-0" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{7}-?[0-9]"
+      required
+    >
+    <small>13 digits, with or without dashes</small>
+  </div>
+  </section>
+  <section class="form-section">
+  <h2>Contact &amp; address</h2>
+
+  <div class="field">
+    <label for="mobile">Mobile number</label>
+    <input id="mobile" name="mobile" type="tel"
+           placeholder="0300 1234567" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email"
+           placeholder="you@example.com" required>
+  </div>
+
+  <div class="field full-width">
+    <label for="street">Street address</label>
+    <input id="street" name="street" type="text"
+           placeholder="House or flat number and street" required>
+  </div>
+
+  <div class="field">
+    <label for="neighborhood">Neighborhood <small>Optional</small></label>
+    <input id="neighborhood" name="neighborhood" type="text"
+           placeholder="e.g. Satellite Town">
+  </div>
+
+  <div class="field">
+    <label for="city">City</label>
+    <input id="city" name="city" type="text"
+           placeholder="e.g. Gujranwala" required>
+  </div>
+
+  <div class="field">
+    <label for="province">Province or territory</label>
+    <select id="province" name="province" required>
+      <option value="">Select a province or territory</option>
+      <option>Punjab</option>
+      <option>Sindh</option>
+      <option>Khyber Pakhtunkhwa</option>
+      <option>Balochistan</option>
+      <option>Islamabad Capital Territory</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="postal-code">Postal code <small>Optional</small></label>
+    <input id="postal-code" name="postalCode" type="text"
+           placeholder="5 digits" inputmode="numeric" pattern="[0-9]{5}">
+    <small>5 digits</small>
+  </div>
+</section>
+      <section class="form-section">
+  <h2>Driving licence</h2>
+
+  <div class="field">
+    <label for="licence-number">Licence number</label>
+    <input id="licence-number" name="licenceNumber"
+           type="text" required>
+  </div>
+
+  <div class="field">
+    <label for="licence-expiry">Expiry date</label>
+    <input id="licence-expiry" name="licenceExpiry"
+           type="date" required>
+  </div>
+
+  <div class="field full-width">
+    <label for="issuing-authority">Issuing authority</label>
+    <input id="issuing-authority" name="issuingAuthority"
+           type="text" placeholder="As printed on your licence"
+           required>
+  </div>
+</section>
+        <section class="form-section">
+  <h2>Vehicle details</h2>
+
+  <div class="field">
+    <label for="vehicle-make">Make</label>
+    <input id="vehicle-make" name="vehicleMake"
+           type="text" placeholder="e.g. Suzuki" required>
+  </div>
+
+  <div class="field">
+    <label for="vehicle-model">Model</label>
+    <input id="vehicle-model" name="vehicleModel"
+           type="text" placeholder="e.g. Alto" required>
+  </div>
+
+  <div class="field">
+    <label for="model-year">Model year</label>
+    <input id="model-year" name="modelYear"
+           type="number" placeholder="e.g. 2022"
+           min="1980" max="2026" required>
+  </div>
+
+  <div class="field">
+    <label for="vehicle-colour">Colour</label>
+    <input id="vehicle-colour" name="vehicleColour"
+           type="text" placeholder="e.g. Silver" required>
+  </div>
+
+  <div class="field">
+    <label for="plate-number">Plate number</label>
+    <input id="plate-number" name="plateNumber"
+           type="text" placeholder="e.g. ABC 123" required>
+  </div>
+
+  <div class="field">
+    <label for="passengers">Passenger seats</label>
+    <input id="passengers" name="passengers"
+           type="number" placeholder="e.g. 3"
+           min="1" max="8" required>
+    <small>Exclude the driver's seat</small>
+  </div>
+</section>
+<section class="form-section">
+  <h2>Verification documents</h2>
+  <div class="field">
+    <label for="cnic-document">CNIC document (sample only)</label>
+    <input id="cnic-document" name="cnicDocument" type="file" accept="image/*,.pdf" required>
+  </div>
+  <div class="field">
+    <label for="licence-document">Driving licence (sample only)</label>
+    <input id="licence-document" name="licenceDocument" type="file" accept="image/*,.pdf" required>
+  </div>
+</section>
+<section class="form-section">
+  <h2>Account security</h2>
+
+  <div class="field">
+    <label for="password">Password</label>
+    <input id="password" name="password"
+           type="password" minlength="8" required>
+    <small>At least 8 characters</small>
+  </div>
+
+  <div class="field">
+    <label for="confirm-password">Confirm password</label>
+    <input id="confirm-password" name="confirmPassword"
+           type="password" minlength="8" required>
+  </div>
+</section>
+
+<button class="create-button" type="submit" disabled>Create account</button>
+<p id="form-message" role="status" aria-live="polite"></p>
+<noscript>Enable JavaScript to try this demo form.</noscript>
+    </form>
+  </main>
+  <script src="signup.js"></script>
+</body>
+</html>
