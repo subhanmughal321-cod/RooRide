@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RooRide</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -122,12 +120,13 @@
         </div>
 
     </div>
+    <!-- Updated popular daily trips section - design from 2page.jpg -->
     <section class="popular-trips-section" id="popular-trips">
         <div class="trips-container">
-            <h2>Popular daily trips around the city and suburbs</h2>
+            <h2 class="fade-up">Popular daily trips around the city and suburbs</h2>
             <div class="trips-carousel">
                 <div class="trips" id="trips-list">
-            <article class="card trip-card">
+            <article class="card trip-card fade-left">
                 <img src="images.jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
                 <div class="trip-card-content">
                     <div class="trip-route">
@@ -144,7 +143,7 @@
                     </div>
                 </div>
             </article>
-            <article class="card trip-card">
+            <article class="card trip-card fade-up">
                 <img src="images (1).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
                 <div class="trip-card-content">
                     <div class="trip-route">
@@ -161,7 +160,7 @@
                     </div>
                 </div>
             </article>
-            <article class="card trip-card">
+            <article class="card trip-card fade-up">
                 <img src="images (2).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
                 <div class="trip-card-content">
                     <div class="trip-route">
@@ -178,7 +177,7 @@
                     </div>
                 </div>
             </article>
-            <article class="card trip-card">
+            <article class="card trip-card fade-right">
                 <img src="images (3).jpg.jpeg" alt="Gujranwala local trip" onerror="this.onerror=null; this.src='trip-placeholder.svg';">
                 <div class="trip-card-content">
                     <div class="trip-route">
@@ -205,7 +204,7 @@
     <div class="benefits-section">
       <div class="container">
 
-        <div class="hero-box">
+        <div class="hero-box fade-up">
           <h1>Share your trip and reduce costs</h1>
           <p>
             Offer rides as a driver and turn free seats into cost savings. It's simple: post your trip, and passengers will share fuel and toll expenses with you.
@@ -213,11 +212,11 @@
           <a href="offer-ride.html" class="hero-btn">→ Share a ride</a>
         </div>
 
-        <h2 class="heading">Benefits of RooRide</h2>
+        <h2 class="heading fade-up">Benefits of RooRide</h2>
 
         <div class="cards-container">
 
-          <div class="card">
+          <div class="card fade-left">
             <div class="icon-circle">
               <img src="affordable.svg" alt="Affordable">
             </div>
@@ -227,7 +226,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card fade-up">
             <div class="icon-circle">
               <img src="convenient.svg" alt="Convenient">
             </div>
@@ -237,7 +236,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card fade-right">
             <div class="icon-circle">
               <img src="safe.svg" alt="Safe">
             </div>
@@ -247,7 +246,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card fade-left">
             <div class="icon-circle">
               <img src="eco.svg" alt="Eco-friendly">
             </div>
@@ -257,7 +256,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card fade-right">
             <div class="icon-circle">
               <img src="flexible.svg" alt="Flexible">
             </div>
@@ -274,14 +273,14 @@
 
     <!-- Service Section -->
     <div class="services">
-        <h1>Who is this service for?</h1>
+        <h1 class="fade-up">Who is this service for?</h1>
         <div class="serviceboxes">
-            <div class="servicebox">
+            <div class="servicebox fade-left">
                 <div class="serviceheading"><span class="serviceicon">👤</span><h3>For passengers looking for a driver</h3></div>
                 <p>Passengers can find a ride for their route, choose a convenient time, and arrange a shared trip with the driver.</p>
                 <div class="servicelist"><p>✓ Find a driver for daily trips</p><p>✓ Travel cheaper by sharing costs</p><p>✓ Choose convenient pickup locations</p><p>✓ Search for rides without unnecessary calls</p></div>
             </div>
-            <div class="servicebox">
+            <div class="servicebox fade-right">
                 <div class="serviceheading"><span class="serviceicon">🚘</span><h3>For drivers looking for passengers</h3></div>
                 <p>Drivers can create trips, specify their route, time, and available seats to find passengers going the same way.</p>
                 <div class="servicelist"><p>✓ Fill free seats in your car</p><p>✓ Partially cover fuel costs</p><p>✓ Find passengers for planned trips</p><p>✓ Communicate directly with passengers</p></div>
@@ -296,8 +295,8 @@
             <div class="footerlinks"><h4>My RooRide</h4><a href="profile.html">Profile</a><a href="reviews.html">Reviews and ratings</a><a href="settings.html">Settings</a></div>
             <div class="footerlinks"><h4>Help</h4><a href="help.html">Help Center</a><a href="safety.html">Safety</a><a href="rules.html">Service rules</a></div>
         </div>
-        <div class="footerbottom"><p>© 2026 RooRide. Made By JKS.</p><div class="footerpolicy"><a href="terms.html">Terms of use</a><span>|</span><a href="privacy.html">Privacy policy</a></div></div>
+        <div class="footerbottom"><p>© 2026 RooRide. All rights reserved.</p><div class="footerpolicy"><a href="terms.html">Terms of use</a><span>|</span><a href="privacy.html">Privacy policy</a></div></div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
