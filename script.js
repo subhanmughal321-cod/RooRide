@@ -1,4 +1,3 @@
-
 function switchTab(type) {
     const tabs = document.querySelectorAll(".tab");
     const form = document.getElementById("rideform");
@@ -31,15 +30,14 @@ function updateNavbar() {
 window.addEventListener("scroll", updateNavbar);
 updateNavbar();
 
-// Scroll reveal animation
 
+// Scroll reveal animation
 const revealElements = document.querySelectorAll(
     ".fade-left, .fade-right, .fade-up"
 );
 
 if ("IntersectionObserver" in window &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
