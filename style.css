@@ -966,6 +966,7 @@ button, input, select, textarea {
   }
 }
 
+/* Smooth scrolling and navigation effects */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -996,6 +997,67 @@ html {
     }
 
     .navbar, .nav-links a::after {
+        transition: none;
+    }
+}
+
+
+/* Scroll reveal animation */
+.popular-trips-section,
+.benefits-section,
+.services {
+    overflow-x: clip;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.8s ease, translate 0.8s ease;
+}
+
+.scroll-reveal.fade-left {
+    translate: -50px 0;
+}
+
+.scroll-reveal.fade-right {
+    translate: 50px 0;
+}
+
+.scroll-reveal.fade-up {
+    translate: 0 40px;
+}
+
+.scroll-reveal.show {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.popular-trips-section .card.scroll-reveal {
+    transition: opacity 0.8s ease, translate 0.8s ease,
+                transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .scroll-reveal.fade-left {
+        translate: -20px 0;
+    }
+
+    .scroll-reveal.fade-right {
+        translate: 20px 0;
+    }
+
+    .scroll-reveal.show {
+        translate: 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal.fade-left,
+    .scroll-reveal.fade-right,
+    .scroll-reveal.fade-up,
+    .popular-trips-section .card.scroll-reveal {
+        opacity: 1;
+        translate: none;
         transition: none;
     }
 }
