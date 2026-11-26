@@ -30,3 +30,32 @@ function updateNavbar() {
 
 window.addEventListener("scroll", updateNavbar);
 updateNavbar();
+
+// Scroll reveal animation
+
+const revealElements = document.querySelectorAll(
+    ".fade-left, .fade-right, .fade-up"
+);
+
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(element => {
+        element.classList.add("scroll-reveal");
+        observer.observe(element);
+
+        element.addEventListener("focusin", () => {
+            element.classList.add("show");
+            observer.unobserve(element);
+        });
+    });
+}
