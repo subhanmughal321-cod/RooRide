@@ -1,0 +1,339 @@
+/* Original RooRide colours and font */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    background: #fff4e2;
+    color: #084827;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+button, input {
+    font: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Split screen layout */
+.login-page {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.brand-panel {
+    position: relative;
+    overflow: hidden;
+    background: #fff4e2;
+    border-right: 2px solid #07552c;
+    padding: 38px 10%;
+}
+
+.brand img {
+    display: block;
+    width: 210px;
+    max-width: 100%;
+    height: auto;
+}
+
+.brand-text {
+    position: relative;
+    z-index: 1;
+    margin-top: 65px;
+    max-width: 320px;
+}
+
+.brand-text h2 {
+    font-size: clamp(27px, 3.2vw, 46px);
+    letter-spacing: -1.5px;
+    line-height: 1.18;
+    margin: 12px 0;
+}
+
+.brand-text p:not(.eyebrow) {
+    line-height: 1.65;
+    color: #52625c;
+}
+
+.road {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 43%;
+    pointer-events: none;
+}
+
+/* Right side */
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: #fff8eb;
+    padding: 32px clamp(25px, 8vw, 130px);
+    min-width: 0;
+}
+
+.back-link, .signup-link a {
+    color: #07552c;
+    font-weight: 700;
+    text-underline-offset: 4px;
+}
+
+.back-link {
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 520px;
+    margin: auto 0;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    color: #08784c;
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.1;
+    letter-spacing: -3px;
+    margin: 12px 0;
+    font-weight: 800;
+}
+
+h1 span {
+    color: #ffb600;
+}
+
+.subtitle {
+    color: #52625c;
+    line-height: 1.55;
+    margin: 0 0 30px;
+}
+
+/* Form fields */
+.field {
+    margin-bottom: 26px;
+}
+
+.field label {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.field input {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 2px solid #07552c;
+    border-radius: 0;
+    background: transparent;
+    color: #182321;
+    font-size: 16px;
+}
+
+.field input::placeholder {
+    color: #68756c;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: #08784c;
+    box-shadow: 0 2px 0 #08784c;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field input {
+    padding-right: 65px;
+}
+
+.show-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 48px;
+    padding: 0 7px;
+    border: 0;
+    background: transparent;
+    color: #07552c;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-button {
+    width: 100%;
+    min-height: 54px;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    background: #07552c;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button span {
+    float: right;
+}
+
+.login-button:hover {
+    background: #08784c;
+}
+
+.login-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+button:focus-visible, a:focus-visible, summary:focus-visible {
+    outline: 2px solid #08784c;
+    outline-offset: 4px;
+}
+
+.message {
+    font-size: 14px;
+    color: #a12626;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.message:empty {
+    display: none;
+}
+
+.signup-link {
+    margin: 23px 0;
+    font-size: 14px;
+    color: #52625c;
+}
+
+.demo-info {
+    border-top: 1px solid #d9d9cb;
+    padding-top: 15px;
+    color: #52625c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.demo-info summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #07552c;
+}
+
+.demo-accounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.demo-button {
+    padding: 9px 14px;
+    border: 1px solid #07552c;
+    border-radius: 7px;
+    background: transparent;
+    color: #07552c;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.demo-button:hover {
+    background: #e8f5ed;
+}
+
+.success-panel {
+    padding: 22px;
+    background: #e8f5ed;
+    border: 1px solid #a7b5ad;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+.success-panel h2 {
+    margin-top: 0;
+}
+
+.copyright {
+    margin: 32px 0 0;
+    color: #52625c;
+    font-size: 12px;
+}
+
+/* Mobile and tablet */
+@media (max-width: 760px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        padding: 18px 6%;
+        border-right: 0;
+        border-bottom: 1px solid #07552c;
+        min-height: 90px;
+    }
+
+    .brand img {
+        width: 155px;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .road {
+        width: 35%;
+        height: 80px;
+    }
+
+    .form-panel {
+        padding: 25px 6% 30px;
+    }
+
+    .form-content {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .back-link {
+        margin-bottom: 27px;
+    }
+
+    h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-button {
+        transition: none;
+    }
+}

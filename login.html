@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>Log in | RooRide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css?v=1">
+    <script src="login.js?v=1" defer></script>
+</head>
+<body>
+    <main class="login-page">
+        <!-- Left side: brand and road illustration -->
+        <aside class="brand-panel">
+            <a class="brand" href="index.html" aria-label="RooRide homepage">
+                <img src="logo.png" alt="RooRide">
+            </a>
+            <div class="brand-text">
+                <p class="eyebrow">YOUR CITY. YOUR JOURNEY.</p>
+                <h2>Good journeys<br>start together.</h2>
+                <p>Find a ride. Share a ride. Make every trip count.</p>
+            </div>
+            <!-- Decorative curved road, drawn directly in HTML -->
+            <svg class="road" viewBox="0 0 500 430" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+                <path d="M0 172 Q220 37 500 0 L500 10 Q200 78 0 284 Z" fill="#07552c"/>
+                <path d="M0 390 Q185 145 500 15 L500 47 Q302 235 456 430 H0 Z" fill="#07552c"/>
+                <path d="M115 430 Q177 255 500 29" fill="none" stroke="#ffb600" stroke-width="13" stroke-dasharray="48 30"/>
+            </svg>
+        </aside>
+
+        <!-- Right side: common login for riders and drivers -->
+        <section class="form-panel">
+            <a class="back-link" href="index.html">← Back to home</a>
+            <div class="form-content">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Log in<span>.</span></h1>
+                <p class="subtitle">Continue your journey with RooRide.</p>
+
+                <form id="loginForm" method="post">
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input id="email" type="email" placeholder="you@example.com" autocomplete="username" required>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <div class="password-field">
+                            <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button id="togglePassword" class="show-password" type="button" aria-controls="password" aria-pressed="false">Show</button>
+                        </div>
+                    </div>
+                    <button id="loginButton" class="login-button" type="submit" disabled>Log in <span aria-hidden="true">→</span></button>
+                    <p id="message" class="message" role="status" aria-live="polite"></p>
+                    <noscript>Enable JavaScript to try the demo login.</noscript>
+                </form>
+
+                <div id="successPanel" class="success-panel" hidden>
+                    <h2 id="welcomeMessage"></h2>
+                    <p>Your demo login was successful. Your account type has been identified.</p>
+                    <p class="subtitle">Your dashboard will be connected in the next stage.</p>
+                    <button id="logoutButton" class="login-button" type="button">Log out</button>
+                </div>
+
+                <p class="signup-link">New to RooRide? <a href="account-type.html">Create an account</a></p>
+                <details class="demo-info">
+                    <summary>Try a demo account</summary>
+                    <p>Use sample data only. No real account or database is connected.</p>
+                    <div class="demo-accounts">
+                        <button type="button" class="demo-button" id="riderDemo">Rider demo</button>
+                        <button type="button" class="demo-button" id="driverDemo">Driver demo</button>
+                    </div>
+                    <p>Rider: rider@example.com<br>Driver: driver@example.com<br>Password for both: RooRide123</p>
+                </details>
+            </div>
+            <p class="copyright">© 2026 RooRide</p>
+        </section>
+    </main>
+</body>
+</html>
