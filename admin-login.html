@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>Admin Login | RooRide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-login.css">
+    <script src="admin-login.js" defer></script>
+</head>
+<body>
+    <!-- Header and logo -->
+    <header class="topbar">
+        <a href="index.html"><img src="logo.png" alt="RooRide"></a>
+        <a class="back-link" href="login.html">← Back to user login</a>
+    </header>
+
+    <main class="admin-page">
+        <section class="admin-card">
+            <!-- Admin portal heading -->
+            <div class="admin-heading">
+                <div class="shield" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2 21 6v6c0 5-4 8-9 10-5-2-9-5-9-10V6l9-4Z"/>
+                        <path d="m8 12 3 3 5-6"/>
+                    </svg>
+                </div>
+                <p class="eyebrow">ADMINISTRATION</p>
+                <h1>RooRide Admin Portal</h1>
+                <p class="subtitle">Log in to manage the RooRide platform.</p>
+                <span class="yellow-line"></span>
+            </div>
+
+            <!-- Administrator login form -->
+            <form id="adminForm" method="post">
+                <div class="field">
+                    <label for="adminEmail">Administrator email</label>
+                    <input id="adminEmail" type="email" autocomplete="username" placeholder="admin@example.com" required>
+                </div>
+                <div class="field">
+                    <label for="adminPassword">Password</label>
+                    <div class="password-field">
+                        <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                        <button id="togglePassword" class="show-password" type="button" aria-controls="adminPassword" aria-pressed="false">Show</button>
+                    </div>
+                </div>
+                <button id="loginButton" class="primary-button" type="submit" disabled>Log in as administrator <span aria-hidden="true">→</span></button>
+                <p id="message" class="message" role="status" aria-live="polite"></p>
+                <noscript>Enable JavaScript to use the demo login.</noscript>
+            </form>
+
+            <!-- Shown after successful demo login -->
+            <div class="success-panel" id="successPanel" hidden>
+                <h2>Welcome, Administrator!</h2>
+                <p>Demo login successful. Your administrator account has been identified.</p>
+                <p>The Admin Dashboard will be connected in the next development phase.</p>
+                <button class="primary-button" type="button" id="logoutButton">Log out</button>
+            </div>
+
+            <p class="portal-note">Intended for authorized administrators only.</p>
+            <details class="demo-info" id="demoInfo">
+                <summary>Try administrator demo</summary>
+                <p>Email: admin@example.com<br>Password: Admin123</p>
+                <button type="button" id="demoButton" class="demo-button">Fill sample credentials</button>
+                <p>Frontend demonstration only. Do not enter real credentials.</p>
+            </details>
+            <a class="bottom-link" href="login.html">← Return to Rider / Driver login</a>
+        </section>
+        <p class="copyright">© 2026 RooRide</p>
+    </main>
+</body>
+</html>

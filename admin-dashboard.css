@@ -1,0 +1,122 @@
+/* Shared RooRide colors and basic layout */
+* { box-sizing: border-box; }
+:root { --green: #07552c; --light-green: #08784c; --cream: #fff4e2; --yellow: #ffb600; --muted: #58665c; }
+body { margin: 0; background: #fff8eb; color: var(--green); font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 14px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .55; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #a56c00; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.topbar { background: var(--cream); border-bottom: 1px solid #dedbca; height: 76px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { font-size: 29px; font-weight: 800; letter-spacing: -1.5px; }
+.brand span { color: #b17a00; }
+.brand small { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.admin-name { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.avatar { background: #e1ecd8; border-radius: 50%; width: 34px; height: 34px; display: grid; place-items: center; font-weight: 800; }
+.layout { display: grid; grid-template-columns: 225px minmax(0, 1fr); min-height: calc(100vh - 76px); }
+.sidebar { background: var(--cream); border-right: 1px solid #dedbca; padding: 24px 15px; display: flex; flex-direction: column; }
+.nav-label { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: 1.3px; margin: 18px 12px 9px; }
+.sidebar > .nav-label { margin-top: 0; }
+.nav-button { display: block; border: 0; background: transparent; color: var(--green); text-align: left; width: 100%; font-weight: 600; padding: 12px; border-radius: 8px; margin: 2px 0; }
+.nav-button:hover { background: #e9ecda; }
+.nav-button.active { background: var(--green); color: white; }
+.logout { margin-top: auto; padding: 12px; text-align: left; color: var(--green); border: 1px solid #cdd5c2; border-radius: 8px; background: transparent; font-weight: 700; }
+.logout span { float: right; }
+main { padding: 25px 32px; max-width: 1440px; width: 100%; margin: 0 auto; min-width: 0; }
+.page-heading, .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.page-heading { margin-bottom: 21px; }
+.eyebrow { font-size: 10px; font-weight: 800; color: var(--light-green); letter-spacing: 1.5px; margin: 0 0 7px; }
+h1 { font-size: 33px; letter-spacing: -1.3px; margin: 0; }
+h1 span { color: var(--yellow); }
+h2 { font-size: 17px; margin: 0; letter-spacing: -.35px; }
+.demo-label { font-size: 10px; font-weight: 700; color: #765100; border: 1px solid #e4c77a; background: #fff1c8; border-radius: 5px; padding: 6px 9px; white-space: nowrap; }
+.welcome { display: flex; align-items: center; justify-content: space-between; gap: 18px; background: #eeeed9; border: 1px solid #e3e4ce; border-radius: 15px; padding: 15px 25px; min-height: 170px; }
+.welcome h2 { font-size: clamp(23px, 2.4vw, 33px); line-height: 1.18; letter-spacing: -1px; }
+.welcome p:not(.eyebrow) { color: var(--muted); line-height: 1.65; margin: 8px 0 0; max-width: 360px; }
+.city { width: 43%; max-width: 365px; height: auto; flex-shrink: 0; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 17px 0; }
+.stat, .panel { background: #fffdfa; border: 1px solid #e6e1d3; border-radius: 12px; padding: 18px; }
+.stat p { color: var(--muted); font-weight: 600; font-size: 12px; margin: 0 0 10px; }
+.stat strong { font-size: 30px; letter-spacing: -1px; }
+.panel { margin-bottom: 17px; }
+.impact { background: #e8efdf; border-color: #dce6d0; }
+.section-heading span, .muted, .small { color: var(--muted); }
+.section-heading span, .small { font-size: 12px; }
+.impact-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin: 17px 0 9px; }
+.impact-grid strong { font-size: 24px; display: block; margin-bottom: 5px; }
+.impact-grid p { font-size: 12px; color: var(--muted); margin: 0; }
+.small { margin: 8px 0 0; }
+.table-wrap { overflow-x: auto; margin-top: 15px; }
+table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+th, td { padding: 13px 10px; border-bottom: 1px solid #e8e5da; font-size: 13px; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); background: #f6f5ed; }
+tr:last-child td { border-bottom: 0; }
+.status { display: inline-block; border-radius: 5px; padding: 4px 8px; background: #e9eee3; color: #31583b; font-size: 11px; font-weight: 700; }
+.status.pending { background: #fff0c2; color: #795400; }
+.status.inactive { background: #f8e7e2; color: #963a2e; }
+.text-button, .action { border: 0; background: transparent; color: var(--green); font-weight: 700; font-size: 12px; padding: 6px 8px; }
+.text-button:hover, .action:hover { text-decoration: underline; }
+.action { background: #e7efdf; border-radius: 5px; margin-right: 5px; }
+.action.reject { background: #f7e8e4; color: #923b30; }
+#filters { margin-top: 20px; }
+#filters label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
+input, select { border: 1px solid #cbd3c3; border-radius: 7px; background: white; color: #26472e; padding: 10px 12px; max-width: 100%; }
+#search { width: 360px; }
+#notice { padding: 11px 14px; background: #e6efdf; border: 1px solid #cadcc2; border-radius: 8px; }
+#extra { margin-top: 15px; color: var(--muted); line-height: 1.7; }
+.report-filter { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.report-filter label { display: block; font-size: 12px; margin-bottom: 4px; }
+footer { color: var(--muted); text-align: center; font-size: 11px; padding: 8px 0; }
+@media (max-width: 1050px) { .stats { grid-template-columns: repeat(2, minmax(0,1fr)); } main { padding: 22px; } }
+@media (max-width: 700px) { .topbar { height: 65px; padding: 0 15px; } .brand { font-size: 23px; } .brand small { display: none; } .admin-name { font-size: 12px; } .layout { display: block; } .sidebar { border-right: 0; border-bottom: 1px solid #dedbca; padding: 10px; } .sidebar .nav-label { display: none; } nav { display: flex; overflow-x: auto; gap: 5px; padding-bottom: 5px; } .nav-button { white-space: nowrap; width: auto; padding: 9px 12px; } .logout { align-self: flex-end; margin: 5px 0 0; padding: 7px 12px; } .logout span { float: none; } main { padding: 18px 13px; } .welcome { padding: 15px; } .welcome h2 { font-size: 23px; } .welcome p:not(.eyebrow) { font-size: 12px; } .city { width: 40%; } h1 { font-size: 28px; } .stat, .panel { padding: 13px; } .impact-grid strong { font-size: 19px; } .section-heading { flex-wrap: wrap; } }
+@media (max-width: 380px) { .welcome { flex-direction: column; align-items: flex-start; } .city { width: 65%; align-self: center; } .impact-grid { grid-template-columns: 1fr; } }
+
+
+/* Smooth entrance and hover effects */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* The welcome banner, cards and panels appear in a short sequence. */
+.page-enter .welcome,
+.page-enter .stat,
+.page-enter .panel {
+    animation: fadeUp 0.45s ease-out both;
+}
+.page-enter .stat:nth-child(1) { animation-delay: 0.07s; }
+.page-enter .stat:nth-child(2) { animation-delay: 0.14s; }
+.page-enter .stat:nth-child(3) { animation-delay: 0.21s; }
+.page-enter .stat:nth-child(4) { animation-delay: 0.28s; }
+#overview.page-enter .impact { animation-delay: 0.34s; }
+#overview.page-enter > .panel:last-child { animation-delay: 0.40s; }
+
+/* Remove the animation class after entering so hover transitions stay smooth. */
+.stat, .city {
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.nav-button, .logout, .action, .text-button {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+@media (hover: hover) {
+    .stat:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(7, 85, 44, 0.10);
+    }
+    .welcome:hover .city { transform: translateY(-3px); }
+    .logout:hover { background: #e9ecda; }
+    .action:hover { background: #d9e7d3; }
+    .action.reject:hover { background: #f2d8d2; }
+    tbody tr:hover { background: #faf8ef; }
+}
+
+/* Accessibility: respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+    .page-enter .welcome, .page-enter .stat, .page-enter .panel {
+        animation: none;
+    }
+    .stat, .city, .nav-button, .logout, .action, .text-button {
+        transition: none;
+    }
+    .stat:hover, .welcome:hover .city { transform: none; }
+}

@@ -37,15 +37,31 @@ form.addEventListener("submit", function (event) {
     if (user === null) {
         message.textContent = "Incorrect email or password. Please try again.";
     } else {
-        form.reset();
-        password.type = "password";
-        toggle.textContent = "Show";
-        toggle.setAttribute("aria-pressed", "false");
-        form.hidden = true;
-        document.getElementById("welcomeMessage").textContent = "Welcome, " + user.role + "!";
-        successPanel.hidden = false;
-        document.getElementById("logoutButton").focus();
-        // Later: connect the backend and redirect using the verified role.
+        const details = new URLSearchParams(window.location.search);
+
+        // Only a rider can continue a booking search.
+        if (details.get("intent") === "booking" && user.role !== "Rider") {
+            message.textContent = "Please log in using a rider account.";
+            return;
+        }
+
+        // Offering a ride requires a driver account.
+        if (details.get("intent") === "offer" && user.role !== "Driver") {
+            message.textContent = "Please log in using a driver account to offer a ride.";
+            return;
+        }
+
+        // Rider dashboard is now ready. Preserve homepage search parameters.
+        if (user.role === "Rider") {
+            window.location.href = "rider-dashboard.html" + window.location.search;
+            return;
+        }
+
+        // Driver dashboard is now ready.
+        if (user.role === "Driver") {
+            window.location.href = "driver-dashboard.html" + window.location.search;
+            return;
+        }
     }
 });
 

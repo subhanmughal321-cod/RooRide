@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | RooRide</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="admin-dashboard.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">Roo<span>Ride</span> <small>/ Admin</small></div>
+        <div class="admin-name"><span class="avatar">A</span> Administrator</div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <p class="nav-label">MANAGEMENT</p>
+            <nav aria-label="Admin navigation" id="navigation">
+                <button class="nav-button active" data-page="overview">Overview</button>
+                <button class="nav-button" data-page="users">Users</button>
+                <button class="nav-button" data-page="drivers">Drivers &amp; vehicles</button>
+                <button class="nav-button" data-page="verification">Verification</button>
+                <button class="nav-button" data-page="rides">Rides</button>
+                <button class="nav-button" data-page="bookings">Bookings</button>
+                <p class="nav-label">ROORIDE MODULES</p>
+                <button class="nav-button" data-page="campus">CampusConnect</button>
+                <button class="nav-button" data-page="green">GreenImpact</button>
+                <button class="nav-button" data-page="rewards">EcoRewards</button>
+                <button class="nav-button" data-page="complaints">Complaints &amp; feedback</button>
+                <button class="nav-button" data-page="reports">Analytics &amp; reports</button>
+            </nav>
+            <button class="logout" id="logout">Log out <span>↗</span></button>
+        </aside>
+        <main id="main">
+            <div class="page-heading"><div><p class="eyebrow">ADMINISTRATOR PORTAL</p><h1 id="pageTitle">Overview<span>.</span></h1></div><span class="demo-label">DEMO DATA</span></div>
+            <p id="notice" role="status" aria-live="polite" hidden></p>
+            <section id="overview">
+                <div class="welcome">
+                    <div><p class="eyebrow">SMART &amp; SUSTAINABLE MOBILITY</p><h2>Building better journeys.</h2><p>Welcome back, Admin! Here's what's happening across RooRide.</p></div>
+                    <!-- Connected City: simple SVG shapes, no image file needed. -->
+                    <svg class="city" viewBox="0 0 500 245" role="img" aria-label="Illustration of a connected city, university, car and trees">
+                        <circle cx="250" cy="110" r="96" fill="#e8ebd7"/>
+                        <circle cx="332" cy="47" r="24" fill="#ffcf53"/>
+                        <g fill="#b7cdaa"><rect x="65" y="97" width="53" height="104" rx="4"/><rect x="126" y="62" width="49" height="139" rx="4"/><rect x="365" y="83" width="53" height="118" rx="4"/><rect x="425" y="121" width="35" height="80" rx="3"/></g>
+                        <g fill="#fff4e2">
+                            <path d="M76 110h10v11H76z M97 110h10v11H97z M76 135h10v11H76z M97 135h10v11H97z M76 160h10v11H76z M97 160h10v11H97z M137 75h10v13h-10z M155 75h10v13h-10z M137 100h10v13h-10z M155 100h10v13h-10z M137 125h10v13h-10z M155 125h10v13h-10z M376 95h11v13h-11z M397 95h11v13h-11z M376 120h11v13h-11z M397 120h11v13h-11z M376 145h11v13h-11z M397 145h11v13h-11z"/>
+                        </g>
+                        <path d="M179 201 V100 L249 61 L319 100 V201 Z" fill="#07552c"/><path d="M169 105 L249 57 L329 105" fill="none" stroke="#07552c" stroke-width="9" stroke-linecap="round"/>
+                        <rect x="232" y="151" width="34" height="50" rx="3" fill="#ffb600"/><circle cx="249" cy="104" r="14" fill="#fff4e2"/><path d="M249 95 V104 L256 109" fill="none" stroke="#07552c" stroke-width="2.5" stroke-linecap="round"/>
+                        <g fill="#e3ebd9"><rect x="196" y="130" width="19" height="35" rx="3"/><rect x="282" y="130" width="19" height="35" rx="3"/></g>
+                        <path d="M26 202 H474" stroke="#07552c" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M76 57 Q165 -5 249 37 Q343 0 430 56" fill="none" stroke="#08784c" stroke-width="2" stroke-dasharray="6 7"/>
+                        <g fill="#ffb600" stroke="#fff4e2" stroke-width="4"><circle cx="76" cy="57" r="11"/><circle cx="249" cy="37" r="11"/><circle cx="430" cy="56" r="11"/></g>
+                        <g transform="translate(96 172)"><path d="M0 8 L9 -9 H55 L71 8 L83 14 V30 H-7 V16 Z" fill="#ffb600"/><path d="M16 -3 H50 L61 8 H9 Z" fill="#fff4e2"/><path d="M34 -3 V8" stroke="#07552c" stroke-width="2"/><circle cx="12" cy="29" r="10" fill="#07552c"/><circle cx="64" cy="29" r="10" fill="#07552c"/><circle cx="12" cy="29" r="4" fill="#fff4e2"/><circle cx="64" cy="29" r="4" fill="#fff4e2"/></g>
+                        <g transform="translate(345 147)"><rect x="-3" y="24" width="6" height="30" fill="#07552c"/><circle cy="8" r="23" fill="#08784c"/><circle cx="-14" cy="21" r="16" fill="#77a668"/><circle cx="14" cy="20" r="16" fill="#77a668"/></g>
+                        <path d="M369 221 Q389 197 412 215 Q394 237 369 221" fill="#87ac66"/><path d="M365 228 L399 216" stroke="#07552c" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="stats" id="stats"></div>
+                <div class="impact panel"><div class="section-heading"><h2>GreenImpact</h2><span>Completed shared rides</span></div><div class="impact-grid" id="impactStats"></div><p class="small">Estimated savings under the demo separate-car baseline.</p></div>
+                <div class="panel"><div class="section-heading"><h2>Recent driver registrations</h2><button class="text-button" data-go="verification">View verification →</button></div><div id="recentDrivers" class="table-wrap"></div></div>
+            </section>
+            <section id="management" hidden>
+                <div class="panel">
+                    <div class="section-heading"><h2 id="sectionTitle"></h2></div>
+                    <p id="description" class="muted"></p>
+                    <div id="filters"><label for="search">Search records</label><input id="search" type="search" placeholder="Search by name, ID or status"></div>
+                    <div id="records" class="table-wrap"></div>
+                    <div id="extra"></div>
+                </div>
+            </section>
+            <footer>© 2026 RooRide · Administrator Portal · University project demonstration</footer>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* Basic reset and RooRide colors */
+* { box-sizing: border-box; }
+:root { color-scheme: light; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #fff4e2;
+    color: #084827;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+button, input { font: inherit; }
+[hidden] { display: none !important; }
+a { color: #07552c; }
+
+/* Header */
+.topbar {
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+.topbar img { display: block; width: 160px; height: auto; }
+.back-link { font-size: 14px; font-weight: 700; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+/* Centered login card */
+.admin-page { max-width: 520px; padding: 20px 16px 28px; margin: 0 auto; }
+.admin-card {
+    background: #fffaf2;
+    border: 1px solid #e8e0d0;
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 12px 36px rgba(7, 85, 44, 0.08);
+}
+.admin-heading { text-align: center; margin-bottom: 28px; }
+.shield {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: #e4f0e5;
+    color: #07552c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shield svg { width: 32px; height: 32px; }
+.eyebrow { color: #08784c; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+h1 { margin: 8px 0; font-size: clamp(24px, 4vw, 32px); line-height: 1.2; letter-spacing: -1px; }
+.subtitle { margin: 10px 0 16px; font-size: 14px; line-height: 1.6; color: #52625c; }
+.yellow-line { display: block; width: 48px; height: 4px; border-radius: 6px; background: #ffb600; margin: auto; }
+
+/* Form fields and buttons */
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.field input {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+    padding: 0 14px;
+    background: #ffffff;
+    color: #153b2b;
+    border: 1px solid #cbd7cf;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.field input:focus { outline: 2px solid #08784c; outline-offset: 1px; }
+.password-field { position: relative; }
+.password-field input { padding-right: 72px; }
+.show-password {
+    position: absolute;
+    right: 6px;
+    top: 0;
+    height: 52px;
+    padding: 0 10px;
+    background: transparent;
+    border: 0;
+    color: #07552c;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.primary-button {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: #07552c;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+.primary-button span { float: right; }
+.primary-button:hover { background: #08784c; }
+.primary-button:disabled { opacity: .6; cursor: not-allowed; }
+.message { color: #a32727; font-size: 13px; line-height: 1.5; }
+.message:empty { display: none; }
+.success-panel { background: #e8f2e8; padding: 20px; border-radius: 12px; }
+.success-panel h2 { font-size: 21px; margin-top: 0; }
+.success-panel p { font-size: 14px; line-height: 1.6; }
+
+/* Demo account information and navigation */
+.portal-note { background: #eef3e9; border-radius: 8px; padding: 12px; text-align: center; font-size: 12px; color: #52625c; line-height: 1.5; margin: 20px 0; }
+.demo-info { border-top: 1px solid #dedfd4; padding-top: 15px; color: #52625c; font-size: 12px; line-height: 1.6; }
+.demo-info summary { cursor: pointer; color: #07552c; font-weight: 700; }
+.demo-button { background: #e4f0e5; color: #07552c; border: 1px solid #c4d9c9; border-radius: 8px; padding: 10px 14px; font-weight: 700; cursor: pointer; }
+.demo-button:hover { background: #d4e8d8; }
+.bottom-link { display: block; margin-top: 22px; font-size: 13px; text-align: center; font-weight: 700; }
+.copyright { text-align: center; color: #68756c; font-size: 12px; margin-top: 24px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #08784c; outline-offset: 3px; }
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .topbar { padding: 16px 5%; gap: 10px; }
+    .topbar img { width: 118px; }
+    .back-link { font-size: 12px; text-align: right; }
+    .admin-page { padding-top: 8px; }
+    .admin-card { padding: 24px 20px; border-radius: 18px; }
+}

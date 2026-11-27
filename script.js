@@ -57,3 +57,53 @@ if ("IntersectionObserver" in window &&
         });
     });
 }
+
+// Send the selected popular trip to the login page.
+const tripCards = document.querySelectorAll(".trip-card");
+
+tripCards.forEach(function (card) {
+    const link = card.querySelector(".trip-action");
+    if (!link) return;
+
+    const rideURL = new URL(link.href);
+    rideURL.searchParams.set("intent", "booking");
+    link.href = "login.html?" + rideURL.searchParams.toString();
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", function (event) {
+        // The existing arrow link handles its own click.
+        if (!event.target.closest("a")) {
+            window.location.href = link.href;
+        }
+    });
+});
+
+// Connect the hero search form to rider login.
+const rideForm = document.getElementById("rideform");
+
+rideForm.addEventListener("submit", function (event) {
+    // Keep the existing Offer a ride form action unchanged.
+    if (document.getElementById("rideSubmit").textContent.trim() !== "Search rides") {
+        return;
+    }
+
+    event.preventDefault();
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const date = document.getElementById("date").value;
+    const seats = document.getElementById("passengers").value;
+
+    if (from === to) {
+        alert("Departure and destination cannot be the same.");
+        return;
+    }
+
+    const details = new URLSearchParams();
+    details.set("intent", "booking");
+    details.set("from", from);
+    details.set("to", to);
+    details.set("date", date);
+    details.set("passengers", seats);
+
+    window.location.href = "login.html?" + details.toString();
+});

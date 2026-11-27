@@ -337,3 +337,15 @@ button:focus-visible, a:focus-visible, summary:focus-visible {
         transition: none;
     }
 }
+
+/* Administrator login link below the signup option */
+.admin-link {
+    margin: -8px 0 23px;
+    font-size: 13px;
+    color: #52625c;
+}
+.admin-link a {
+    color: #07552c;
+    font-weight: 700;
+    text-underline-offset: 4px;
+}

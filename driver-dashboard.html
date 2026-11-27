@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RooRide Driver Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="driver-dashboard.css?v=7">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <img src="logo(2).png" alt="RooRide Logo" class="sidebar-logo">
+        <button class="menu-close" id="menuClose">✕</button>
+      </div>
+
+      <div class="driver-card">
+        <div class="driver-avatar">D</div>
+        <div>
+          <h3>Driver</h3>
+          <p>Verified pending demo</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-section="overview">Overview</button>
+        <button class="nav-item" data-section="publishRide">Publish a ride</button>
+        <button class="nav-item" data-section="myRides">My rides</button>
+        <button class="nav-item" data-section="bookingRequests">Booking requests</button>
+        <button class="nav-item" data-section="vehicles">My vehicles</button>
+        <button class="nav-item" data-section="verification">Verification</button>
+        <button class="nav-item" data-section="greenImpact">GreenImpact</button>
+        <button class="nav-item" data-section="saveMore">SaveMore</button>
+        <button class="nav-item" data-section="ecoRewards">EcoRewards</button>
+        <button class="nav-item" data-section="commutePlanner">CommutePlanner</button>
+        <button class="nav-item" data-section="safeTravel">SafeTravel</button>
+        <button class="nav-item" data-section="connect">Connect</button>
+        <button class="nav-item" data-section="profile">Profile</button>
+      </nav>
+
+      <a class="logout-link" href="login.html">Log out</a>
+    </aside>
+
+    <div class="page-area">
+      <header class="topbar">
+        <button class="menu-open" id="menuOpen">☰</button>
+        <div>
+          <h1>Driver Dashboard</h1>
+          <p>Manage trips, passengers and your RooRide performance.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="small-btn" id="quickRideBtn">+ Quick ride</button>
+        </div>
+      </header>
+
+      <main class="content-area">
+        <section class="dashboard-section active" id="overview">
+          <div class="hero-box fade-up">
+            <div class="hero-text">
+              <span class="tag">RooRide Driver</span>
+              <h2>Offer rides, fill seats and earn smarter.</h2>
+              <p>Publish your route, manage booking requests and track your earnings, fuel savings and eco impact in one place.</p>
+              <div class="hero-buttons">
+                <button class="primary-btn" data-go="publishRide">Publish a ride</button>
+                <button class="secondary-btn" data-go="bookingRequests">View requests</button>
+              </div>
+            </div>
+            <div class="hero-image-box">
+              <img src="RooRide_Driver_Dashboard_Illustration.png" alt="Driver Dashboard Illustration">
+            </div>
+          </div>
+
+          <div class="stats-grid fade-up">
+            <div class="stat-card">
+              <h3>Total rides</h3>
+              <p id="statRides">18</p>
+              <span>This month</span>
+            </div>
+            <div class="stat-card">
+              <h3>Total earnings</h3>
+              <p id="statEarnings">Rs. 14,500</p>
+              <span>Shared contributions</span>
+            </div>
+            <div class="stat-card">
+              <h3>Passengers served</h3>
+              <p id="statPassengers">47</p>
+              <span>Across all rides</span>
+            </div>
+            <div class="stat-card">
+              <h3>Average rating</h3>
+              <p id="statRating">4.8</p>
+              <span>Based on reviews</span>
+            </div>
+          </div>
+
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Today's schedule</h3>
+              </div>
+              <ul class="list-box" id="todayScheduleList"></ul>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Latest updates</h3>
+              </div>
+              <ul class="list-box" id="updatesList"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="publishRide">
+          <div class="panel fade-up">
+            <div class="panel-head">
+              <h3>Publish a ride</h3>
+              <p>Create a new trip offer for passengers.</p>
+            </div>
+            <form class="form-grid" id="rideForm">
+              <div class="form-group">
+                <label for="from">Leaving from</label>
+                <input type="text" id="from" placeholder="e.g. Satellite Town" required>
+              </div>
+              <div class="form-group">
+                <label for="to">Going to</label>
+                <input type="text" id="to" placeholder="e.g. GIFT University" required>
+              </div>
+              <div class="form-group">
+                <label for="rideDate">Date</label>
+                <input type="date" id="rideDate" required>
+              </div>
+              <div class="form-group">
+                <label for="rideTime">Time</label>
+                <input type="time" id="rideTime" required>
+              </div>
+              <div class="form-group">
+                <label for="seatCount">Available seats</label>
+                <select id="seatCount" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fare">Fare per seat (Rs.)</label>
+                <input type="number" id="fare" min="50" placeholder="150" required>
+              </div>
+              <div class="form-group full-width">
+                <label for="notes">Ride notes</label>
+                <textarea id="notes" rows="4" placeholder="Pickup point, women-only, luggage info, etc."></textarea>
+              </div>
+              <div class="form-group full-width form-actions">
+                <button type="submit" class="primary-btn">Publish ride</button>
+                <p id="rideMessage" class="message-text"></p>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="myRides">
+          <div class="panel fade-up">
+            <div class="panel-head">
+              <h3>My rides</h3>
+              <p>Upcoming and completed rides.</p>
+            </div>
+            <div id="ridesContainer" class="card-list"></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="bookingRequests">
+          <div class="panel fade-up">
+            <div class="panel-head">
+              <h3>Booking requests</h3>
+              <p>Accept or reject passenger requests.</p>
+            </div>
+            <div id="requestsContainer" class="card-list"></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="vehicles">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Vehicle summary</h3></div>
+              <div class="info-card big-info">
+                <h4>Honda City 1.3</h4>
+                <p><strong>Registration:</strong> GRW-2314</p>
+                <p><strong>Color:</strong> White</p>
+                <p><strong>Seats:</strong> 4</p>
+                <p><strong>Fuel type:</strong> Petrol</p>
+                <p><strong>Fuel efficiency:</strong> 14 km/L</p>
+                <p><strong>AC:</strong> Yes</p>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Vehicle comfort details</h3></div>
+              <ul class="feature-list">
+                <li>Seat belts available for all passengers</li>
+                <li>Air conditioning enabled</li>
+                <li>Small luggage space available</li>
+                <li>Clean and smoke-free interior</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="verification">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Account verification</h3></div>
+              <div class="status-box pending">
+                <h4>Pending review</h4>
+                <p>Your CNIC, driving licence and vehicle documents have been submitted. Admin review is in progress.</p>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Uploaded documents</h3></div>
+              <ul class="list-box">
+                <li>CNIC Front - Uploaded</li>
+                <li>CNIC Back - Uploaded</li>
+                <li>Driving Licence - Uploaded</li>
+                <li>Vehicle Registration - Uploaded</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="greenImpact">
+          <div class="stats-grid fade-up">
+            <div class="stat-card"><h3>CO₂ saved</h3><p>62 kg</p><span>By ride sharing</span></div>
+            <div class="stat-card"><h3>Fuel saved</h3><p>31 L</p><span>Compared to solo rides</span></div>
+            <div class="stat-card"><h3>Cars reduced</h3><p>18</p><span>Trips combined</span></div>
+            <div class="stat-card"><h3>Green score</h3><p>91</p><span>Driver eco performance</span></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="saveMore">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Expense summary</h3></div>
+              <ul class="list-box">
+                <li>Fuel expense this week: Rs. 3,200</li>
+                <li>Toll expense this week: Rs. 450</li>
+                <li>Passenger contribution: Rs. 5,600</li>
+                <li>Net savings: Rs. 1,950</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Fare help</h3></div>
+              <p class="paragraph">Use fare per seat based on route length, fuel use and toll costs so your passengers see clear and fair pricing.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="ecoRewards">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Rewards overview</h3></div>
+              <div class="info-card big-info">
+                <h4>1,280 Eco Points</h4>
+                <p>Badges earned: Green Starter, Ride Hero, Campus Connector</p>
+                <p>Next badge unlock: 1,500 points</p>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Leaderboard</h3></div>
+              <ol class="rank-list">
+                <li>Ali - 1,620 points</li>
+                <li>You - 1,280 points</li>
+                <li>Hamza - 1,150 points</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="commutePlanner">
+          <div class="panel fade-up">
+            <div class="panel-head"><h3>Recurring ride plans</h3></div>
+            <div class="card-list">
+              <div class="simple-card">
+                <h4>Morning campus route</h4>
+                <p>Satellite Town → GIFT University</p>
+                <span>Mon to Fri · 8:00 AM</span>
+              </div>
+              <div class="simple-card">
+                <h4>Return route</h4>
+                <p>GIFT University → Model Town</p>
+                <span>Mon to Fri · 3:30 PM</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="safeTravel">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Pickup PIN</h3></div>
+              <div class="pin-box">6342</div>
+              <p class="paragraph">Ask the passenger to confirm this pickup PIN before the trip starts.</p>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Emergency details</h3></div>
+              <ul class="list-box">
+                <li>Emergency contact: Brother - 0300 1234567</li>
+                <li>Vehicle assistance: Demo service line</li>
+                <li>Safety note: Share live route with trusted contact</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="connect">
+          <div class="two-col-layout fade-up">
+            <div class="panel">
+              <div class="panel-head"><h3>Messages</h3></div>
+              <ul class="list-box">
+                <li>Sarah: Please wait 5 minutes at the gate.</li>
+                <li>Usman: Is there space for one extra bag?</li>
+                <li>Campus Group: Tomorrow's route demand is high.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Private groups</h3></div>
+              <ul class="list-box">
+                <li>GIFT University Riders</li>
+                <li>Model Town Commuters</li>
+                <li>Daily Campus Drivers</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="profile">
+          <div class="panel fade-up">
+            <div class="panel-head"><h3>Profile details</h3></div>
+            <form class="form-grid">
+              <div class="form-group">
+                <label>Full name</label>
+                <input type="text" value="Demo Driver">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="driver@example.com">
+              </div>
+              <div class="form-group">
+                <label>Mobile</label>
+                <input type="text" value="03001234567">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" value="Gujranwala">
+              </div>
+              <div class="form-group full-width form-actions">
+                <button type="button" class="primary-btn">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="driver-dashboard.js?v=7"></script>
+</body>
+</html>

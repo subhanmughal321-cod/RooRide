@@ -754,9 +754,15 @@ button, input, select, textarea {
     border-right: 1px solid #79958a;
 }
 .footerlogo img {
-    width: 140px;
+    display: block;
+    width: 150px;
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    filter: brightness(0) invert(1);
 }
 .footerlogo p {
     font-size: 14px;
@@ -765,15 +771,20 @@ button, input, select, textarea {
 }
 .footerbutton {
     display: inline-block;
-    background: #ffd000;
-    color: #222;
+    background: #08784c;
+    color: white;
     text-decoration: none;
     padding: 12px 30px;
     border-radius: 8px;
     font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #41986c;
+    transition: 0.3s ease;
 }
+
 .footerbutton:hover {
-    background: #e6bb00;
+    background: #09965f;
+    transform: translateY(-2px);
 }
 .footerlinks {
     display: flex;
@@ -830,11 +841,6 @@ button, input, select, textarea {
     }
 }
 
-.footerlogo img {
-    background-color: white;
-    padding: 6px;
-}
-
 @media (max-width: 480px) {
     .services { padding: 36px 5%; }
     .services h1 { font-size: 26px; }
@@ -858,8 +864,8 @@ button, input, select, textarea {
 }
 
 .benefits-section .hero-box {
-  background-color: #fef5a2;
-  border: 1px solid #fae868;
+  background-color: #e5f1e8;
+border: 1px solid #c8ddcd;
   border-radius: 20px;
   padding: 40px 25px;
   text-align: center;
@@ -867,7 +873,7 @@ button, input, select, textarea {
 
 .benefits-section .hero-box h1 {
   font-size: 32px;
-  color: #111111;
+color: #07552c;
   margin-bottom: 15px;
 }
 
